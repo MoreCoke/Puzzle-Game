@@ -86,6 +86,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -100,18 +101,22 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
   font-family: "Noto Serif TC", serif;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -119,6 +124,7 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -129,26 +135,32 @@ section {
   height: 100vh;
   overflow: hidden;
 }
+
 .container {
   width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
+
 .float-left {
   float: left;
 }
+
 .float-right {
   float: right;
 }
+
 .clear {
   clear: both;
 }
+
 .title {
   font-size: 2rem;
   font-weight: bold;
   color: white;
   padding: 47px 0;
 }
+
 .bg {
   position: absolute;
   width: 100%;
@@ -159,18 +171,22 @@ section {
   bottom: 0px;
   z-index: -1;
 }
+
 .img-blur {
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-image: linear-gradient(rgba(black, 0.3)),
-    url(../img/img-bg-Qingming@2x.png);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3))), url(../img/img-bg-Qingming@2x.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3)), url(../img/img-bg-Qingming@2x.png);
   background-position: 75% 0;
-  filter: blur(5px);
-  transform: scale(1.02);
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
+
 .random-btn {
   border: 2px solid white;
   background-color: transparent;
@@ -179,31 +195,36 @@ section {
   outline: none;
   cursor: pointer;
 }
+
 .puzzle-table {
   margin: 2rem auto;
   table-layout: fixed;
   width: 540px;
 }
+
 .puzzle-zone {
   border: 1px solid white;
   width: 180px;
   height: 180px;
   position: relative;
-  &.hover {
-    background-color: rgba(white, 0.5);
-  }
-  
-  img[data-puzzle = "2"],img[data-puzzle = "6"],img[data-puzzle = "8"] {
-    position: absolute;
-    top: 0;
-    left: -27px;
-  }
-  img[data-puzzle = "5"],img[data-puzzle = "7"],img[data-puzzle = "9"] {
-    position: absolute;
-    top: -27px;
-    left: 0;
-  }
 }
+
+.puzzle-zone.hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.puzzle-zone img[data-puzzle="2"], .puzzle-zone img[data-puzzle="6"], .puzzle-zone img[data-puzzle="8"] {
+  position: absolute;
+  top: 0;
+  left: -27px;
+}
+
+.puzzle-zone img[data-puzzle="5"], .puzzle-zone img[data-puzzle="7"], .puzzle-zone img[data-puzzle="9"] {
+  position: absolute;
+  top: -27px;
+  left: 0;
+}
+
 img[data-puzzle] {
   position: absolute;
   top: 0;
@@ -211,3 +232,4 @@ img[data-puzzle] {
   z-index: 1000;
   cursor: move;
 }
+/*# sourceMappingURL=style.css.map */

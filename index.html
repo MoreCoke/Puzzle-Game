@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Puzzle</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle</title>
+    <link rel="stylesheet" href="./styleSheet/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <section>
+      <div class="bg">
+        <div class="img-blur"></div>
+      </div>
+      <div class="container">
+        <h1 class="title">請完成這幅《清明上河圖》</h1>
+        <div>
+          <table class="puzzle-table">
+            <tr>
+              <td class="puzzle-zone" data-zone="1">
+                <!-- <img data-puzzle="1" src="./styleSheet/img/Puzzle-1.png" alt=""> -->
+              </td>
+              <td class="puzzle-zone" data-zone="2">
+                <!-- <img data-puzzle="2" src="./styleSheet/img/Puzzle-2.png" alt=""> -->
+              </td>
+              <td class="puzzle-zone" data-zone="3">
+                <!-- <img data-puzzle="3" src="./styleSheet/img/Puzzle-3.png" alt=""> -->
+              </td>
+            </tr>
+            <tr>
+              <td class="puzzle-zone" data-zone="4">
+                <!-- <img data-puzzle="4" src="./styleSheet/img/Puzzle-4.png" alt=""> -->
+              </td>
+              <td class="puzzle-zone" data-zone="5">
+                <!-- <img data-puzzle="5" src="./styleSheet/img/Puzzle-5.png" alt=""> -->
+              </td>
+              <td class="puzzle-zone" data-zone="6">
+                <!-- <img data-puzzle="6" src="./styleSheet/img/Puzzle-6.png" alt=""> -->
+              </td>
+            </tr>
+            <tr>
+              <td class="puzzle-zone" data-zone="7">
+                <!-- <img data-puzzle="7" src="./styleSheet/img/Puzzle-7.png" alt=""> -->
+              </td>
+              <td class="puzzle-zone" data-zone="8">
+                <!-- <img data-puzzle="8" src="./styleSheet/img/Puzzle-8.png" alt=""> -->
+              </td>
+              <td class="puzzle-zone" data-zone="9">
+                <!-- <img data-puzzle="9" src="./styleSheet/img/Puzzle-9.png" alt=""> -->
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <img draggable="true" data-puzzle="1" src="./styleSheet/img/Puzzle-1.png" alt="">
+          <img draggable="true" data-puzzle="2" src="./styleSheet/img/Puzzle-2.png" alt="">
+          <img draggable="true" data-puzzle="3" src="./styleSheet/img/Puzzle-3.png" alt="">
+          <img draggable="true" data-puzzle="4" src="./styleSheet/img/Puzzle-4.png" alt="">
+          <img draggable="true" data-puzzle="5" src="./styleSheet/img/Puzzle-5.png" alt="">
+          <img draggable="true" data-puzzle="6" src="./styleSheet/img/Puzzle-6.png" alt="">
+          <img draggable="true" data-puzzle="7" src="./styleSheet/img/Puzzle-7.png" alt="">
+          <img draggable="true" data-puzzle="8" src="./styleSheet/img/Puzzle-8.png" alt="">
+          <img draggable="true" data-puzzle="9" src="./styleSheet/img/Puzzle-9.png" alt="">
+        </div>
+        <div class="clear"></div>
+        <button class="random-btn">重新排列</button>
+      </div>
+    </section>
+    <script type="module" src="./styleSheet/js/all.js"></script>
+  </body>
 </html>
