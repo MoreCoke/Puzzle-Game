@@ -130,6 +130,10 @@ table {
   border-spacing: 0;
 }
 
+button {
+  font-family: "Noto Serif TC", serif;
+}
+
 section {
   position: relative;
   height: 100vh;
@@ -142,16 +146,80 @@ section {
   text-align: center;
 }
 
-.float-left {
-  float: left;
+.puzzle {
+  display: inline-block;
 }
 
-.float-right {
-  float: right;
+.puzzle-move {
+  -webkit-transform: translateX(-150px);
+          transform: translateX(-150px);
+  -webkit-transition: -webkit-transform 1.5s ease;
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
 }
 
-.clear {
-  clear: both;
+.puzzle-table {
+  margin: 2rem auto;
+  table-layout: fixed;
+  width: 540px;
+}
+
+.puzzle-table.shinning {
+  position: relative;
+}
+
+.puzzle-table.shinning::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  width: 556px;
+  height: 556px;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0px 0px 15px white;
+          box-shadow: 0px 0px 15px white;
+  -webkit-animation: blinker 2s ease;
+          animation: blinker 2s ease;
+}
+
+.puzzle-zone {
+  border: 1px solid white;
+  width: 180px;
+  height: 180px;
+  position: relative;
+}
+
+.puzzle-zone.hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.puzzle-zone img[data-puzzle="1"],
+.puzzle-zone img[data-puzzle="3"],
+.puzzle-zone img[data-puzzle="4"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.puzzle-zone img[data-puzzle="2"],
+.puzzle-zone img[data-puzzle="6"],
+.puzzle-zone img[data-puzzle="8"] {
+  position: absolute;
+  top: 0;
+  left: -27px;
+}
+
+.puzzle-zone img[data-puzzle="5"],
+.puzzle-zone img[data-puzzle="7"],
+.puzzle-zone img[data-puzzle="9"] {
+  position: absolute;
+  top: -27px;
+  left: 0;
 }
 
 .title {
@@ -159,6 +227,63 @@ section {
   font-weight: bold;
   color: white;
   padding: 47px 0;
+}
+
+.description {
+  display: inline-block;
+  vertical-align: top;
+  width: 350px;
+  height: 540px;
+  margin: 2rem 0 2rem 30px;
+  color: white;
+  text-align: left;
+  opacity: 0;
+  position: fixed;
+}
+
+.description h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.description h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description p {
+  margin-top: 2rem;
+  line-height: 23px;
+}
+
+.description-move {
+  opacity: 1;
+  -webkit-transform: translateX(-150px);
+          transform: translateX(-150px);
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+}
+
+.description-btn {
+  position: absolute;
+  bottom: 0;
+  vertical-align: bottom;
+  width: 100%;
+  height: 67px;
+  padding: 1rem 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  outline: none;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.description-btn:hover {
+  background-color: black;
+  color: white;
 }
 
 .bg {
@@ -188,6 +313,8 @@ section {
 }
 
 .random-btn {
+  width: 350px;
+  height: 67px;
   border: 2px solid white;
   background-color: transparent;
   color: white;
@@ -196,40 +323,37 @@ section {
   cursor: pointer;
 }
 
-.puzzle-table {
-  margin: 2rem auto;
-  table-layout: fixed;
-  width: 540px;
-}
-
-.puzzle-zone {
-  border: 1px solid white;
-  width: 180px;
-  height: 180px;
-  position: relative;
-}
-
-.puzzle-zone.hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.puzzle-zone img[data-puzzle="2"], .puzzle-zone img[data-puzzle="6"], .puzzle-zone img[data-puzzle="8"] {
-  position: absolute;
-  top: 0;
-  left: -27px;
-}
-
-.puzzle-zone img[data-puzzle="5"], .puzzle-zone img[data-puzzle="7"], .puzzle-zone img[data-puzzle="9"] {
-  position: absolute;
-  top: -27px;
-  left: 0;
-}
-
 img[data-puzzle] {
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 1000;
   cursor: move;
+}
+
+.none {
+  display: none;
+}
+
+@-webkit-keyframes blinker {
+  30% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinker {
+  30% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
